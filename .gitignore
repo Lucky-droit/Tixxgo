@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Build output and test artifacts
+dist/
+dist-ssr/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Logs and package-manager debug output
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local overrides and temporary files
+*.local
+*.tmp
+*.temp
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
