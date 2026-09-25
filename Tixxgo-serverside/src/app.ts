@@ -3,6 +3,7 @@ import type { Knex } from 'knex';
 import { db } from './db/knex.js';
 import { AppError, ValidationError } from './domain/errors.js';
 import { errorHandler } from './middleware/errorHandler.js';
+import { cors } from './middleware/cors.js';
 import { requestId } from './middleware/requestId.js';
 import { env } from './config/env.js';
 import { createMockSupplierRouter } from './suppliers/mock/mockSupplierServer.js';
@@ -23,6 +24,7 @@ export function createApp(database: Knex = db): Express {
   const paymentRoutes = createPaymentRoutes(database, paymentGateway, (bookingId) => bookingOrchestrator.bookWithSupplier(bookingId));
 
   app.use(requestId);
+  app.use(cors);
   app.use(express.json());
   app.use('/api/dev/mock-supplier', createMockSupplierRouter(supplierRuntime.scenarios));
   app.use('/api/flights', createFlightRouter(database, supplierRuntime.gateway));

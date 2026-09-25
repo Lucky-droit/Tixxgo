@@ -6,6 +6,7 @@ const envSchema = z.object({
   PORT: z.coerce.number().int().positive().default(3000),
   DATABASE_URL: z.string().url().default('postgresql://postgres:postgres@127.0.0.1:5432/tixxgo'),
   DATABASE_SSL: z.enum(['true', 'false']).default('true').transform((value) => value === 'true'),
+  FRONTEND_ORIGINS: z.string().default('http://localhost:5173'),
   ENABLED_SUPPLIERS: z.string().default('tbo'),
   SUPPLIER_TIMEOUT_MS: z.coerce.number().int().positive().default(8_000),
   DB_POOL_MIN: z.coerce.number().int().nonnegative().default(0),
