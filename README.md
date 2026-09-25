@@ -2,6 +2,8 @@
 
 Tixxgo is an online flight and hotel platform. Phase 0 provides the backend foundation.
 
+> **For a complete flow understanding of the codebase, go through [flight_booking_system_architecture.docs](docs/FILE-FLOW.md).**
+
 ## Local backend setup
 
 1. Create a Supabase project at [supabase.com](https://supabase.com) and copy its PostgreSQL connection details from **Project Settings > Database**.
